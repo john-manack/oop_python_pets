@@ -23,8 +23,19 @@ class Pet:
         Happiness: %d
         """ % (self.name, self.fullness, self.happiness)
         
+class CuddlyPet(Pet):
+    def cuddle(self, other_pet):
+        other_pet.get_love()
+
 benji = Pet("Benji", 50, 20, 20, 1)
 lassie = Pet("Lassie", 50, 20, 20, 1)
 clifford = Pet("Old Yeller", 50, 20, 20, 1)
 
 print(benji.mopiness)
+
+nora = CuddlyPet("Nora", 50, 20, 20, 1)
+cujo = Pet("Cujo", 50, 10, 30, 10)
+print(cujo.happiness)
+nora.cuddle(cujo)
+print(cujo.happiness)
+print(cujo)
